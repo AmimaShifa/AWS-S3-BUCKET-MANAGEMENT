@@ -1,0 +1,117 @@
+input {
+  font-size: 16px;
+  padding: 5px;
+  margin: 10px;
+}
+.App{
+  background-color:#1A053C;
+  height: 100vh;
+  margin-top:0;
+  color: white;
+}
+form{
+  margin-top: 30px;
+  padding: 10px;
+}
+label {
+  font-size: 18px;
+  width: 100px;
+  text-align: left;
+  
+}
+h1{
+text-align: center;
+}
+#file{
+  background-color: indigo;
+  color: white;
+  padding: 0.5rem;
+  font-family: Arial;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 70%;
+}
+button{
+  background-color: blue;
+  color:whitesmoke;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bolder;
+  font-size: large;
+  border-color:white;
+  border-radius:20px;
+}
+h2{
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+.name{
+  width:180px;
+  margin-right: 2px;
+}
+.textip{
+  width:70%;
+  color:darkblue;
+  font-family: monospace;
+}
+#console{
+background-color:#1F2833;
+height: 80vh;
+color:aliceblue;
+padding: 20px;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+}
+#op{
+  background-color: #0B0C10;
+  height: 80vh;
+  padding: 20px;
+  color:#66FCF1;
+  font-family: monospace; font-size: 20px; 
+  font-style:large; font-variant: normal;
+   font-weight: 400; 
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.btn{
+  display: flex;
+  width: 100%;
+    justify-content: center;
+ 
+}
+.bbtn{
+  display: flex;
+  width: 100%;
+    justify-content: center;
+}
+.bfn{
+  padding: 10px;
+  width: 180px;
+  margin: 10px;
+
+}
+button {
+  padding: 5px;
+  width: 100px;
+  border-radius: 2px;
+  align-self:center;
+}
+.flex-container {
+  display: flex;
+}
+
+.flex-child {
+  flex: 1;
+  border: 2px solid yellow;
+}  
+
+h6{
+  color:black;
+  text-align: center;
+  background-color: aliceblue;
+
+}
