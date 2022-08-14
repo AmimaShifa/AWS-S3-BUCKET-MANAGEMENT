@@ -1,107 +1,76 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Axios from "axios";
-/*
-const send = event => {
-  //const data = new FormData();
-  //data.append("name", name);
-  //data.append("file", file);
+//import { FaGithub } from "@react-i";
 
-  Axios.post("http://localhost:8080/file-upload", {
-value:"test"
-  })
-    //.then(res => console.log(res))
-    //.catch(err => console.log(err));
-};*/
+
 function App() {
-  /*const [name, setName] = useState();
-  const [file, setFile] = useState();*/
-  const[file,setFile]=useState(null);
+  const [changeA, setChangeA] = useState('')
+ // const [site, setSite] = useState('')
+  const [data, setData] = useState('')
+  const [file, setFile] = useState(null);
+  //const [bname, setBname] = useState('')
+    const getFileInfo = (e) => {
+    const formData = new FormData();
+    formData.append("file", e.target.files[0], e.target.files[0].name);
+    setFile(formData);
+  }
+  useEffect(()=>{
+if(changeA===true){
   const send = () => {
     console.log("handle info working")
-    Axios.post("http://localhost:8080/file-upload", file)}
-
-        const getFileInfo=(e)=>{
-          console.log("File info working")
-          console.log(e.target.files[0]);
-          const formData = new FormData();
-          formData.append("file",e.target.files[0],e.target.files[0].name );
-          setFile(formData);
-        }
-      
-        const [data, setData] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch("/api")
+    Axios.post("http://localhost:8080/file-upload", file)
+  }
+  send();
+  fetch("/file-upload")
     .then((res) => res.json())
-    .then((data) => setData(data.message));
-      
-  }, []);
-  const bname = {
-    name: this.state.name
-  }
-  const handleChange = (event) =>{
-    this.setState({ name: event.target.value});
-    
-  };
-
-  const createb = () => {
-    Axios.post("http://localhost:8080/create-bucket",{bname})
-  }
-  const deleteb = () => {
-    Axios.post("http://localhost:8080/delete-bucket", {bname})
-
-  }
-  const listb = () => {
-    Axios.post("http://localhost:8080/list-bucket")
-
-  }
-
+    .then((data) => setData(data.message))
+     return setChangeA(false);
+}
+  },[changeA])
+ 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>AWS S3 BUCKET MANAGEMENT SYSTEM</h1>
-      <div className="flex-container">
+        <h1>STATIC WEBSITE DEPLOYMENT</h1>
+        <div className="flex-container">
 
-<div className="flex-child" id="console">
-  <h2>S3 Bucket Control</h2>
-  <hr/>
-  
-  <form action="#">
-          <div className="flex">
-            <label htmlFor="name" className="name">Bucket Name</label>
-            <input type="text" className="textip"onChange= {this.handleChange} />
-            <br/>            
-          </div>
-          <br/><br/>
-          <div className="bbtn">
-            <button className="bfn" onClick={createb}> Create BUCKET</button>
-            <button className="bfn"onClick={deleteb}> Delete BUCKET</button>
-            <button className="bfn"onClick={listb}>List BUCKETS</button>
+          <div className="flex-child" id="console">
+            <h2>WEBSITE DEPLOYMENT</h2>
+            <hr />
+              <div className="flex">
+                <div className="txt">
+                NOTE:
+                <br/>- Make sure the CSS is inline not external.
+                <br/>- The name of the HTML file is supposed to be '<i> index </i>' only.
+                <br/>- The extension for the HTML file is supposed to be '<i> .html </i>' .
+                <br/>- Uploading the file more than once will result in replacing the recent file with existing or previously deployed website.
+                </div>
+              </div>
+            <br />
+            <div className="flex">
+              <label htmlFor="file">HTML File</label>
+              <input type="file" id="file" onChange={getFileInfo}  />
             </div>
-        </form>
-        <br/> 
-        <div className="flex">
-            <label htmlFor="file">HTML File</label>
-            <input type="file" id="file" onChange={getFileInfo}               />
-          </div>
-          <br/>
-        <div className="btn"><button onClick={send}>Send</button></div>
-        
-</div>
+            <br />
+            <div className="btn"><button onClick={()=>{setChangeA(true)}}>DEPLOY</button></div>
 
-<div className="flex-child" id="op">
-<h2>OUTPUT</h2>
-<hr/>
-<br/> 
-  <p>{!data ? "Loading..." : data} </p>
-</div>
-</div>
-  
+          </div>
+
+          <div className="flex-child" id="op">
+            <h2>STATUS</h2>
+            <hr />
+            <br />
+            <p>{!data? "Loading..." : data } </p>
+            <br/>
+            {!data? "" : <center><a href="https://test-awss3-bucket-9.s3.amazonaws.com/index.html"  target="_blank"><button className='linkbtn'>Click here to view the deployment!</button></a></center>}
+          </div>
+        </div>
+
       </header>
-      <h6>Footer</h6>
+      <h6>© 2022 Copyright : Designed & Developed by <a href="https://github.com/AmimaShifa" target="_blank">Amima Shifa </a></h6>
     </div>
   );
 }
 
-export default App;
+export default App

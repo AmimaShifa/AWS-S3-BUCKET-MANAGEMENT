@@ -9,9 +9,20 @@ input {
   margin-top:0;
   color: white;
 }
-form{
-  margin-top: 30px;
+i{
+  color:black;
+}
+html{
+  height: 100vh;
+}
+.txt{
+  margin-top: 10px;
   padding: 10px;
+  font-size:14px;
+  background-color: white;
+  color:darkgreen;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  line-height:24px ;
 }
 label {
   font-size: 18px;
@@ -57,21 +68,30 @@ h2{
 }
 #console{
 background-color:#1F2833;
-height: 80vh;
+height: 70vh;
 color:aliceblue;
 padding: 20px;
 font-style: normal;
 font-weight: bold;
 font-size: 20px;
 }
+.linkbtn{
+  width:500px;
+  justify-content: center;
+}
+.linkdiv{
+  width: 100%;
+  justify-content: center;
+}
 #op{
   background-color: #0B0C10;
-  height: 80vh;
+  height: 70vh;
   padding: 20px;
   color:#66FCF1;
   font-family: monospace; font-size: 20px; 
   font-style:large; font-variant: normal;
    font-weight: 400; 
+   
 }
 .flex {
   display: flex;
@@ -113,5 +133,15 @@ h6{
   color:black;
   text-align: center;
   background-color: aliceblue;
+  padding:2px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 
+}
+a:active{
+  color: black;
+}
+a:visited{
+  color: black;
 }
